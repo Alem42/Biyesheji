@@ -1,30 +1,25 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Home from "./pages/Home";
-import Page1 from "./pages/Page1";
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Login from './pages/Login'; // 确保路径正确
+import UserInfo from './pages/UserInfo';
 
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <>
       <Router>
-      <div>
-        <Link to="/">Home</Link>{` | `}  
-        <Link to="/page">Page1</Link> 
+        <div>
+          
+          <Routes>
+            {/* 重定向从根路径到/login */}
+            <Route path="/" element={<Login />} />
+            {/* 路由规则指向对应组件 */}
+            <Route path="/login" element={<Login />} />
+            <Route path="/pages/UserInfo" element={<UserInfo />} />
+            {/* 这里可以根据需要添加更多路由规则 */}
+          </Routes>
+          
+        </div>
+      </Router>
+  );
+};
 
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/page" Component={Page1} />
-        </Routes>
-      </div>
-    </Router>
-    </>
-  )
-}
-
-export default App
+export default App;

@@ -3,7 +3,8 @@
 export default function Page1() {
     return (
         <>
-            <h1>Hello Page1</h1>
+            <p className="font-bold text-2xl m-10">Hello Page1</p>
         </>
     )
 }
+
