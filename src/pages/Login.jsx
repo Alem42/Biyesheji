@@ -10,7 +10,6 @@ function Login() {
 
   const handleLogin = async () => {
     console.log({ username, password })
-    console.log(loginApi);
     const response = await fetch(loginApi, {  // 异步函数handleLogin，在用户点击登录按钮时被调用。
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
