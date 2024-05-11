@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { loginApi } from '../utils/host';
 
 function Login() {
   const navigate = useNavigate();   // 用于后面的页面跳转
@@ -9,7 +10,8 @@ function Login() {
 
   const handleLogin = async () => {
     console.log({ username, password })
-    const response = await fetch('http://localhost:3000/login', {  // 异步函数handleLogin，在用户点击登录按钮时被调用。
+    console.log(loginApi);
+    const response = await fetch(loginApi, {  // 异步函数handleLogin，在用户点击登录按钮时被调用。
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username, password })
