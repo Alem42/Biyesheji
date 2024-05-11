@@ -8,19 +8,18 @@ function Login() {
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleLogin = async () => {
-    // const response = await fetch('/api/login', {  // 异步函数handleLogin，在用户点击登录按钮时被调用。
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify({ username, password })
-    // });
-    // if (response.ok) {
-      // 通过验证，导航到地图界面
+    console.log({ username, password })
+    const response = await fetch('http://localhost:3000/login', {  // 异步函数handleLogin，在用户点击登录按钮时被调用。
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username, password })
+    });
+    const res = await response.json()
+    if (res.ok) {
       navigate('/pages/UserInfo');
-    // } else {
-    //   // 显示错误消息
-    //   const errorData = await response.json();
-    //   setErrorMessage(errorData.message);
-    // }
+    } else {
+      setErrorMessage(res.message);
+    }
   };
 
 
