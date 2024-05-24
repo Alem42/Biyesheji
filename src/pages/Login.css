@@ -1,0 +1,13 @@
+/* Login.css */
+/* 添加 transition 属性到容器样式中 */
+.flex {
+  transition: background-image 0.5s ease-in-out;
+}
+
+.day-background {
+  background-image: linear-gradient(#38acf0, #95ddfa);
+}
+
+.night-background {
+  background-image: linear-gradient(#161a27be, #352417c4);
+}
