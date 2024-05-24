@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 function Dashboard() {
-  const [speed, setSpeed] = useState('10.2 km/h'); // 静态显示，可改为动态
+  const [speed, setSpeed] = useState('2.2 km/h'); // 静态显示，可改为动态
   const [mileage, setMileage] = useState('56.3 km'); // 静态显示，可改为动态
   const [tiltStatus, setTiltStatus] = useState('正常');
   const [tiltDetails, setTiltDetails] = useState({ x: 2, y: 7, z: 0 });

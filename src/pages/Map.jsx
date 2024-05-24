@@ -23,7 +23,7 @@ const App = () => {
             map.panTo(new BMapGL.Point(data.longitude, data.latitude));
         };
 
-        const intervalId = setInterval(fetchLocation, 5000); // 每5秒钟获取一次位置
+        const intervalId = setInterval(fetchLocation, 50000); // 每5秒钟获取一次位置
 
         return () => clearInterval(intervalId);
     }, []);
